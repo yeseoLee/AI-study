@@ -3,13 +3,13 @@
 - 형식 문법의 규칙을 따르는 위계구조/형태/문장구조를 분석하는 과정
 ### Parser
 - 입력 문자열을 특정한 문법에 걸맞게 변환(파악)하는 알고리즘
-- **Directionality(방향성)**
+- **Directionality(방향성)**  
   e.g.) top-down / bottom-up 
-- **Search strategy(탐색전략)**
+- **Search strategy(탐색전략)**  
   e.g.) depth-first, breadth-first
 ### Parsing Representation
 - Tree vs List
-  ![[parser_tree_vs_list.png]]
+  ![parser_tree_vs_list.png](./imgs/parser_tree_vs_list.png)
    
 -  Meaning
 	- 문장 S는 명사절 NP와 동사절 VP로 구성된다.
@@ -20,11 +20,11 @@
 - Lexical ambiguity (어휘적 모호성)
 	- 하나의 같은 단어가 서로 다른 형태소(품사)로 사용됨
 	- 어휘적 모호성이 구조적 모호성(structural ambiguity)을 야기함
-	- ![[lexical_ambiguity .png]]
+	- ![lexical_ambiguity.png](./imgs/lexical_ambiguity.png)
 - Structural ambiguity (구조적 모호성)
 	- 하나의 문장이 다른 방식으로 이해될 수 있음
 	- 품사를 전부 동일하게 태깅되지만 다른 의미로 해석됨
-	- ![[structural_ambiguity.png]]
+	- ![structural_ambiguity.png](./imgs/structural_ambiguity.png)
 
 # Other Topics in NLP
 
@@ -37,11 +37,11 @@
 - $P(W)$ 계산: **Chain Rules** of Probability를 통해 Decompose
   $P(w_{1},w_{2},w_{3}, ..., w_{n}) = P(w_{1})P(w_{2}|w_{1})P(w_{3}|w_{1},w_{2})...P(w_{n}|w_{1},...,w_{n-1})$
 ### Applications
-- Machine Translation(기계 번역)
+- Machine Translation(기계 번역)  
   e.g.) high wind tonight가 large wind tonight 보다 확률이 높음
-- Spell correction (오탈자 교정)
+- Spell correction (오탈자 교정)  
   더 확률이 높은 문장으로 교체
-- Speech recognition (음성 인식)
+- Speech recognition (음성 인식)  
   e.g.) P(I saw a van) >> (eyes awe of an) 발음은 비슷하나 확률이 다름
 - Summarization, question-answering, etc...
 ### Markov Assumption
