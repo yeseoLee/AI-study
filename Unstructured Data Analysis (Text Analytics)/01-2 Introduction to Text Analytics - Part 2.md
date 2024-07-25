@@ -40,7 +40,7 @@
 - Word Weighting: 특정 단어가 어떤 문서에서 얼마나 중요한지 가중치로 표현
 	- TF-IDF (Term frequency and inverse document frequency)
 	  단어 W가 문서 D에서는 자주 등장하지만 Corpus에서는 적게 등장해야 TF-IDF가 커지고, 즉 단어 W가 문서 D를 얼마나 특징지어줄 수 있냐이다. 
-	![[TF-IDF.png]]
+	![TF-IDF.png](./imgs/TF-IDF.png)
 ### One-hot-vector representation
 - 전체 단어의 갯수만큼의 차원을 가짐
 - ex) W<sub>cat</sub>  = [1,0,0, ... ,0] , W<sub>zebra</sub> = [0,1,0, ... ,0]
