@@ -50,7 +50,7 @@ Language itself is ambigious (언어 자체의 중의성, 모호성)
 - Same word with different meanings, different words with same meaning
 - Misspellings, abbreviations, etc.
 ## Text Analytics:Areas
-![[TextAnalytics_Areas.png]]
+![TextAnalytics_Areas](./imgs/TextAnalytics_Areas.png)
 
 ## Types of Text Analytics
 ### Document Classification
