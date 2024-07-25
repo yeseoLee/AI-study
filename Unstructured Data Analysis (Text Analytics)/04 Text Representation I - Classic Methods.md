@@ -38,7 +38,7 @@ $$ TF-IDF(w) = tf(w) \times log(\frac{N}{df(w)}) $$
 - **Very high dimensional**: need to reduce the number of features (고차원)
 - **Sparseness**: most entries are zero (대부분이 0인 희소한 벡터 표현)
 ## TF-IDF Variants
-### Most commonly used TF-IDF Variants in general
+### Most commonly used TF-IDF Variants in general
 #### TF Variants
 - l(logarithm): $1+log(tf_{t,d})$
 #### DF & IDF Variants
