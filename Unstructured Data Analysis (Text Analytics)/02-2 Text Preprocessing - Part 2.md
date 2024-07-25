@@ -36,7 +36,7 @@
 	- 좀 더 복잡하고 느림
 	- Semantics(의미 분석)이 중요한 상황에서 사용
 - e.g.) 
-  ![[stemming_lemmatization.png]]
+  ![stemming_lemmatization.png](./imgs/stemming_lemmatization.png)
 ## Lexical Analysis 4: Part-of-Speech (POS) Tagging
 - 문장이 주어졌을 때, 각각의 토큰들의 POS tag를 예측
 - Input: tokens / Output: most appropriate tag
@@ -63,7 +63,7 @@
 - **Generative sequence models**: w1 -> w2 -> w3 -> ... 순차적으로 할당
 	- 베이즈 규칙을 통해 확률 분해 -> argmax $P(X|Y)P(Y)$
 	- $P(X|Y)$: 단어와 품사의 관계 (e.g. natural은 아마 JJ일 것) / $P(Y)$: 품사와 품사의 관계 (e.g. 관사 이후 관사가 바로 나오는 경우는 거의 없음)
-- **Discriminative sequence models**: (w1, w2, w3, ...) 각각의 단어들에 대한 토큰을 일괄적으로 한번에 예측
+- **Discriminative sequence models**: (w1, w2, w3, ...) 각각의 단어들에 대한 토큰을 일괄적으로 한번에 예측
 	- Conditional Random Field (CRF)
 ####  Neural network-based models (e.g. BERT, ...)
 - Window-based vs sentence-based
