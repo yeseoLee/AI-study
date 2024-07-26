@@ -1,4 +1,4 @@
-# Word-level: GloVe
+# Word-level: GloVe
 ### Limitations of Word2Vec
 - 과도하게 사용된 단어에 대해 너무 많이 학습 
 - e.g.) 관사 the가 나올 확률이 너무 높음 P(w|the)
@@ -16,22 +16,23 @@
   $$F(w_i,w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
 - $w_i$와 $w_j$의 관계를 substraction(뺄셈)으로 표현
   $$F(w_i - w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
-- 두 단어 사이의 차이(관계)$w_i - w_j$ 와 context word $\tilde{w}_k$ 사이의 링크를 만들어 주기 위해내적으로 하나의 스칼라 값을 만들어줌
+- 두 단어 사이의 차이(관계)$w_i - w_j$ 와 context word $\tilde{w}_k$ 사이의 링크를 만들어 주기 위해 내적으로 하나의 스칼라 값을 만들어줌
   $$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$
   ### Homomorphism
-  아래 수식 대신, 아까 변형한 수식을 이용하여 표현한다.
-    $$\frac{P(solid|ice)}{P(solid|steam)}$$
-    $$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$
-그렇다면 다음과 같이 표현할 수 있다.
-$$\frac{P(solid|ice)}{P(solid|steam)} = F \left((ice - stream)^T solid \right)$$ice와 steam의 위치를 바꾸면 아래와 같이 빼기 순서가 달라진다.
-$$\frac{P(solid|steam)}{P(solid|ice)} = F \left((steam - ice)^T solid \right)$$
-두 식을 정리하면 다음과 같다. (즉, ice와 steam의 위치를 바꾸면 역수가 된다.)
-$$F \left((ice - steam)^T solid \right) = \frac{P(solid|ice)}{P(solid|steam)} = \frac{1}{F \left((steam - ice)^T solid \right)}$$
-
-`Input`에 대한 항등원 관계를 정리
-$$(ice - steam)^T solid = - (steam - ice)^T solid $$
-`F의 output`에 대한 항등원 관계를 정리 
-$$F \left((ice - steam)^T solid \right) = \frac{1}{F \left((steam - ice)^T solid \right)}$$
+  아래 수식 대신, 아까 변형한 수식을 이용하여 표현한다.  
+$$\frac{P(solid|ice)}{P(solid|steam)}$$  
+$$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$  
+그렇다면 다음과 같이 표현할 수 있다.  
+$$\frac{P(solid|ice)}{P(solid|steam)} = F \left((ice - stream)^T solid \right)$$  
+ice와 steam의 위치를 바꾸면 아래와 같이 빼기 순서가 달라진다.  
+$$\frac{P(solid|steam)}{P(solid|ice)} = F \left((steam - ice)^T solid \right)$$  
+두 식을 정리하면 다음과 같다. (즉, ice와 steam의 위치를 바꾸면 역수가 된다.)  
+$$F \left((ice - steam)^T solid \right) = \frac{P(solid|ice)}{P(solid|steam)} = \frac{1}{F \left((steam - ice)^T solid \right)}$$  
+
+`Input`에 대한 항등원 관계를 정리  
+$$(ice - steam)^T solid = - (steam - ice)^T solid $$  
+`F의 output`에 대한 항등원 관계를 정리  
+$$F \left((ice - steam)^T solid \right) = \frac{1}{F \left((steam - ice)^T solid \right)}$$  
 
 - Need a homomorphism **from $(R,+)$ to $(R_{>0},\times)$**
    **= 입력을 덧셈의 항등원으로 바꿔주면 함수의 출력값은 곱셉의 항등원으로 나오게 되는 Mapping이 필요**하다.
