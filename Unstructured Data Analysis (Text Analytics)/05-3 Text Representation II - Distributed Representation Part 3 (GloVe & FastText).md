@@ -12,14 +12,14 @@
 - 단어 k가 steam과 관련성이 높지만 ice와는 아니라면 $P_{ik} / P_{jk}$ 는 작아야함  
 - 단어 k가 둘 다 관련있다면 비율은 1에 가까워져야함
 ### Formulation
-- 함수 F를 이용하여 세 단어들의 관계를 표현
-  $$F(w_i,w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
-- $w_i$와 $w_j$의 관계를 substraction(뺄셈)으로 표현
-  $$F(w_i - w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
-- 두 단어 사이의 차이(관계)$w_i - w_j$ 와 context word $\tilde{w}_k$ 사이의 링크를 만들어 주기 위해 내적으로 하나의 스칼라 값을 만들어줌
-  $$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$
-  ### Homomorphism
-  아래 수식 대신, 아까 변형한 수식을 이용하여 표현한다.  
+- 함수 F를 이용하여 세 단어들의 관계를 표현  
+$$F(w_i,w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
+- $w_i$와 $w_j$의 관계를 substraction(뺄셈)으로 표현  
+$$F(w_i - w_j,\tilde{w}_k) = \frac{P_{ik}}{P_{jk}}$$
+- 두 단어 사이의 차이(관계) $w_i - w_j$ 와 context word $\tilde{w}_k$ 사이의 링크를 만들어 주기 위해 내적으로 하나의 스칼라 값을 만들어줌  
+$$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$
+### Homomorphism  
+아래 수식 대신, 아까 변형한 수식을 이용하여 표현한다.  
 $$\frac{P(solid|ice)}{P(solid|steam)}$$  
 $$F \left((w_i - w_j)^T \tilde{w}_k \right) = \frac{P_{ik}}{P_{jk}}$$  
 그렇다면 다음과 같이 표현할 수 있다.  
@@ -40,16 +40,16 @@ $$F \left((ice - steam)^T solid \right) = \frac{1}{F \left((steam - ice)^T solid
 - f(a+b) = f(a)f(b)를 만족해야 하므로, 그 중 우리가 아는 가장 쉬운 함수인 **F(x) = exp(x)**
 ### Solution
 
-위 식에서 F(x) 대신 exp(x)로 정리하고 로그를 씌우면
-$$w_i^T \tilde{w}_k = logP_{ik} = logX_{ik} - logX_i$$
-$logX_i$ 를 $b_i+\tilde{b_k}$ 로 표현하여 정리하면 
-$$w_i^T \tilde{w}_k + b_i+\tilde{b_k} = logX_{ik}$$
+위 식에서 F(x) 대신 exp(x)로 정리하고 로그를 씌우면  
+$$w_i^T \tilde{w}_k = logP_{ik} = logX_{ik} - logX_i$$  
+$logX_i$ 를 $b_i+\tilde{b_k}$ 로 표현하여 정리하면  
+$$w_i^T \tilde{w}_k + b_i+\tilde{b_k} = logX_{ik}$$  
 
-### Objective Function
- $$ J = \sum^V_{i,j=1}f(X_{ij})\left(w_i^T \tilde{w}_k + b_i+\tilde{b_k} \right)^2$$
+### Objective Function  
+$$ J = \sum^V_{i,j=1}f(X_{ij})\left(w_i^T \tilde{w}_k + b_i+\tilde{b_k} \right)^2$$  
 $f(X_{ij})$ 
-- 고 빈도 단어들의 학습에 대한 가중치를 낮춰주는 역할
-- $(x / x_{max})^a$ if $x < x_{max}$ otherwise $1$
+- 고 빈도 단어들의 학습에 대한 가중치를 낮춰주는 역할  
+- $(x / x_{max})^a$ if $x < x_{max}$ otherwise $1$  
 
 ---
 # Word-level: FastText
