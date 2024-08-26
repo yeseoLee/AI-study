@@ -1,4 +1,4 @@
-논문 링크: https://www.fit.vut.cz/research/group/speech/public/publi/2010/mikolov_interspeech2010_IS100722.pdf
+> 논문 링크: https://www.fit.vut.cz/research/group/speech/public/publi/2010/mikolov_interspeech2010_IS100722.pdf
 
 ## Abstract
 - SOTA backoff 언어 모델 대비 혼란도(perplexity)를 약 50% 줄일 수 있다.
